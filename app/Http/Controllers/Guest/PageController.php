@@ -10,7 +10,7 @@ class PageController extends Controller
 {
     public function index()
     {
-        $movies = Movie::all();
+        $movies = Movie::orderBy('title', 'asc')->get(['title', 'vote']);
 
         return view('welcome', compact('movies'));
     }
