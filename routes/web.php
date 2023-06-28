@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Guest\PageController;
+use App\Http\Controllers\Guest\MovieController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,9 +15,6 @@ use App\Http\Controllers\Guest\PageController;
 |
 */
 
-Route::get('/', [PageController::class, 'index'])->name('index');
+Route::get('/', [PageController::class, 'index'])->name('homepage');
 
-Route::get('/otherpage', function () {
-    $links = config('store.someLinks');
-    return view('other', compact('links'));
-});
+Route::get('/movies', [MovieController::class, 'index'])->name('movies');
