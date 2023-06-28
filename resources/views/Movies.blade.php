@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('page-title', 'Title Override: Other Page')
+@section('page-title', 'Movies specific page 🍿')
 @section('content')
 
 <div class="text-center py-2">
