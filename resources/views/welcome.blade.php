@@ -2,14 +2,17 @@
 
 @section('content')
 <div class="container my-3">
-    <h1>Welcome Page</h1>
-    <div class="row g-4">
-        <div class="col">
-            <div>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe, delectus ad esse illum omnis earum eligendi sint a minus quasi, inventore nulla autem. Maxime voluptatem eligendi veniam voluptates. Soluta, sunt!</p>
+    @foreach ($movies as $movie)
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">{{ $movie->title }}</h5>
+                <p class="card-text">{{ $movie->original_title }}</p>
+                <p class="card-text">{{ $movie->nationality}}</p>
+                <p class="card-text">{{ $movie->date }}</p>
+                <p class="card-text">{{ $movie->vote }}</p>
+                {{-- <a href="{{ route('movies.show', $movie->id) }}" class="btn btn-primary">View</a> --}}
             </div>
         </div>
-    </div>
-
+    @endforeach
 </div>
 @endsection
